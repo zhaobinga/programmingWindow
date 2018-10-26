@@ -1,0 +1,33 @@
+public partial class MainWindow : Window
+    {
+        // _赵炳_ 声明热键(选中的lable)并且定义两种颜色刷子，一种为选定时的刷子，一种为正常的刷子
+        Label lableHot;
+        Brush brush_hot = new SolidColorBrush(Color.FromRgb(125, 124,124));
+        Brush brush_normal = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+
+
+        public HeadPage headPage = new HeadPage();
+        public MainMenuPage mainMenuPage = new MainMenuPage();  
+        ...
+        ...
+        ...
+    }
+
+
+
+
+  
+private Page createPageChapter1()
+    {
+        //给当前选中的lable进行刷颜色，要先将前面选中的lable刷回正常颜色，理解如下：
+        //先将前面的选中的lable（即lablehot）刷成正常颜色，
+        //然后给当前lable刷选中后该有的颜色，之后该lable成为lablehot（可理解为指针lablehot指向当前lable）
+        //接下来的所有lable同理，不再做注释
+        lableHot.Background = brush_normal;
+        lable2.Background = brush_hot;
+        lableHot = lable2;
+        ...
+        ...
+        ...
+    }
+
